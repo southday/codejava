@@ -1,13 +1,15 @@
 package southday.java.util.xcipher;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.security.SecureRandom;
 
 import javax.crypto.Cipher;
+import javax.crypto.CipherInputStream;
+import javax.crypto.CipherOutputStream;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
@@ -22,6 +24,7 @@ import org.apache.commons.codec.binary.Base64;
 public class DESCipher implements XCipher {
     private static final String ALGORITHM = "DES";
     private static final String CHARSET = "UTF-8";
+    private static final int BUFFER_SIZE = 1024;
     private Cipher cipher = null;
     
     /**
@@ -60,36 +63,38 @@ public class DESCipher implements XCipher {
     @Override
     public void encrypt(File in, File out, String key) throws Exception {
         this.initCipher(Cipher.ENCRYPT_MODE, key);
-        BufferedReader bfr = new BufferedReader(new FileReader(in));
-        BufferedWriter bfw = new BufferedWriter(new FileWriter(out));
-        String line = null;
-        while ((line = bfr.readLine()) != null) {
-            String ciphertext = new String(Base64.encodeBase64(cipher.doFinal(line.getBytes(CHARSET))));
-            bfw.write(ciphertext);
-            bfw.flush();
+        InputStream ins = new FileInputStream(in);
+        OutputStream outs = new FileOutputStream(out);
+        CipherInputStream cins = new CipherInputStream(ins, cipher);
+        byte[] buf = new byte[BUFFER_SIZE];
+        int len = 0;
+        while ((len = cins.read(buf)) > 0) {
+            outs.write(buf, 0, len);
         }
-        bfr.close();
-        bfw.close();
+        cins.close();
+        ins.close();
+        outs.close();
     }
 
     @Override
     public void decrypt(File in, File out, String key) throws Exception {
         this.initCipher(Cipher.DECRYPT_MODE, key);
-        BufferedReader bfr = new BufferedReader(new FileReader(in));
-        BufferedWriter bfw = new BufferedWriter(new FileWriter(out));
-        String line = null;
-        while ((line = bfr.readLine()) != null) {
-            String plaintext = new String(cipher.doFinal(Base64.decodeBase64(line.getBytes())), CHARSET);
-            bfw.write(plaintext);
-            bfw.flush();
+        InputStream ins = new FileInputStream(in);
+        OutputStream outs = new FileOutputStream(out);
+        CipherOutputStream cos = new CipherOutputStream(outs, cipher);
+        byte[] buf = new byte[BUFFER_SIZE];
+        int len = 0;
+        while ((len = ins.read(buf)) > 0) {
+            cos.write(buf, 0, len);
         }
-        bfr.close();
-        bfw.close();
+        cos.close();
+        outs.close();
+        ins.close();
     }
     
     public static void main(String[] args) throws Exception {
-        String plaintext = "southday";
-        String key = "southday";
+        String plaintext = "hello world!";
+        String key = "hello world!";
         DESCipher cipher = new DESCipher();
         String ciphertext = cipher.encrypt(plaintext, key);
         System.out.println(ciphertext);
