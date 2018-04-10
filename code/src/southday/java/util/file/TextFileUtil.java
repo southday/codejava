@@ -116,7 +116,7 @@ public class TextFileUtil extends FileUtil {
     public static void main(String[] args) {
         String oldStr = "\t";
         String newStr = "    ";
-        String directory = "C:/Users/coco/Desktop/tab/src";
+        String directory = "D:/GitHub/Repos/codejava/code/src/southday/java/util/voter";
         replace(directory, oldStr, newStr);
     }
 }
