@@ -16,7 +16,7 @@
         * 发放糖果1颗 -> 糖果数目=0 -> 糖果售罄
     + 糖果售罄 -> 投入糖果 -> 无1元
 
-#### 糟糕的设计 `southday.pattern.state.bad`
+#### 糟糕的设计 `southday.java.pattern.state.bad`
 
 使用if语句来完成状态转换逻辑，使得代码可读性变差且不易维护和扩展
 
@@ -40,6 +40,6 @@
         * 发放糖果2颗 -> 糖果数目=0 -> 糖果售罄
     + 糖果售罄 -> 投入糖果 -> 无1元
 
-#### 状态模式 `southday.pattern.state.state`
+#### 状态模式 `southday.java.pattern.state.state`
 
 状态模式：允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类
