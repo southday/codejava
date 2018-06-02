@@ -22,7 +22,7 @@ public class CandyMachine {
         WINNER = new WinnerState(this);
         this.count = count;
         if (this.count > 0) {
-            this.state = NO_1YUAN;
+            state = NO_1YUAN;
         }
     }
     
@@ -57,34 +57,34 @@ public class CandyMachine {
     }
     
     public State getNo1YuanState() {
-        return this.NO_1YUAN;
+        return NO_1YUAN;
     }
     
     public State getHas1YuanState() {
-        return this.HAS_1YUAN;
+        return HAS_1YUAN;
     }
     
     public State getSoldState() {
-        return this.SOLD;
+        return SOLD;
     }
     
     public State getSoldOutState() {
-        return this.SOLD_OUT;
+        return SOLD_OUT;
     }
     
     public State getWinnerState() {
-        return this.WINNER;
+        return WINNER;
     }
     
     public int getCount() {
-        return this.count;
+        return count;
     }
     
     /**
      * 发放1颗糖果
      */
     public void releaseOneCandy() {
-        this.count--;
+        count--;
     }
     
     /**
@@ -93,9 +93,10 @@ public class CandyMachine {
      */
     public void refill(int count) {
         this.count = count;
+        state = NO_1YUAN;
     }
     
     public String toString() {
-        return "糖果机剩余" + this.count + "颗糖，处于" + this.state + "状态";
+        return "糖果机剩余" + count + "颗糖，处于" + state + "状态";
     }
 }
