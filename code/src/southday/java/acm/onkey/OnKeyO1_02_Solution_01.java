@@ -1,4 +1,4 @@
-package southday.java.acm.onkey.o1;
+package southday.java.acm.onkey;
 
 import java.util.ArrayList;
 
@@ -16,11 +16,11 @@ Input: n = 4, k = 2 Output:
 ]
 */
 
-public class OnKey_02_Solution_01 {
+public class OnKeyO1_02_Solution_01 {
     private ArrayList<Integer> ls = new ArrayList<Integer>();
     
     public static void main(String[] args) {
-        OnKey_02_Solution_01 o = new OnKey_02_Solution_01();
+        OnKeyO1_02_Solution_01 o = new OnKeyO1_02_Solution_01();
         o.foo(4, 3);
     }
     

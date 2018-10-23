@@ -1,4 +1,4 @@
-package southday.java.acm.onkey.o1;
+package southday.java.acm.onkey;
 
 /*
 1.You're given strings J representing the types of stones that are jewels, and S representing the stones you have.  
@@ -17,7 +17,7 @@ Note:S and J will consist of letters and have length at most 50.
 The characters in J are distinct. 
 */
 
-public class OnKey_01_Solution_01 {
+public class OnKeyO1_01_Solution_01 {
     public static void main(String[] args) {
         String J = "aA";
         String S = "aAAbbbaA";
@@ -25,14 +25,14 @@ public class OnKey_01_Solution_01 {
     }
     
     public static int foo(String J, String S) {
-        boolean[] map = new boolean[60];
+        boolean[] map = new boolean[128];
         char[] jchs = J.toCharArray();
         for (int i = 0; i < jchs.length; i++)
-            map[(int)jchs[i]-65] = true;
+            map[jchs[i]] = true;
         int cnt = 0;
         char[] schs = S.toCharArray();
         for (int i = 0; i < schs.length; i++)
-            if (map[(int)schs[i]-65] == true)
+            if (map[schs[i]] == true)
                 cnt++;
         return cnt;
     }

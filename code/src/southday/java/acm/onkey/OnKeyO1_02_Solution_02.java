@@ -1,4 +1,4 @@
-package southday.java.acm.onkey.o1;
+package southday.java.acm.onkey;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ Input: n = 4, k = 2 Output:
 格式要求转为：List<List<Integer>>，所以这里以OnKey_02_Solution_01.java为基础进行修改
 */
 
-public class OnKey_02_Solution_02 {
+public class OnKeyO1_02_Solution_02 {
     private List<List<Integer>> result = new ArrayList<List<Integer>>();
     private ArrayList<Integer> temp = new ArrayList<Integer>();
     
@@ -59,7 +59,7 @@ public class OnKey_02_Solution_02 {
     }
     
     public static void main(String[] args) {
-        OnKey_02_Solution_02 o = new OnKey_02_Solution_02();
+        OnKeyO1_02_Solution_02 o = new OnKeyO1_02_Solution_02();
         List<List<Integer>> ll = o.combine(4, 2);
         o.print(ll);
     }
