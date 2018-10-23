@@ -16,8 +16,6 @@ Input: n = 4, k = 2 Output:
     [1,3],
     [1,4],
 ]
-
-url: https://leetcode.com/problems/combinations/description/ 
 */
 
 /**
