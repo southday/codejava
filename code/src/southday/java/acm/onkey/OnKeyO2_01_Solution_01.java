@@ -74,8 +74,8 @@ public class OnKeyO2_01_Solution_01 {
     
     public static void main(String[] args) {
         int[][] matrix1 = {{1,1,1},
-                          {1,0,1},
-                          {1,1,1}};
+                           {1,0,1},
+                           {1,1,1}};
         
         setZero(matrix1);
         sop(matrix1);
