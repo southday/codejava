@@ -44,9 +44,9 @@ public class LCSProblem {
     
     /**
      * 求解X和Y的最长公共子序列长度（自顶向下） - 备忘录
-     * @param X
-     * @param Y
-     * @param c
+     * @param X X[1...m]
+     * @param Y Y[1...n]
+     * @param c c[0..m, 0..n]，c[i][j]表示Xi和Yj的LCS的长度
      */
     public static void LCSLengthMemorized(char[] X, char[] Y, int[][] c) {
         for (int i = 0, m = c.length; i < m; i++)
