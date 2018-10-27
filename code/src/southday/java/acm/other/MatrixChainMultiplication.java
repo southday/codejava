@@ -16,7 +16,7 @@ public class MatrixChainMultiplication {
     private static final int INFV = Integer.MAX_VALUE;
     
     /**
-              * 矩阵链乘法顺序 （自底向上）
+     * 矩阵链乘法顺序 （自底向上）
      * @param p 矩阵规模序列 p0..pn
      * @param m 辅助表，用于保存代价m[i,j] 1..n (表示计算矩阵Ai..j所需标量乘法次数的最小值)
      * @param s 辅助表，用于记录最优值m[i,j]对应的分割点k
@@ -73,8 +73,8 @@ public class MatrixChainMultiplication {
     
     
     /**
-          * 打印完全括号化的矩阵乘法链
-     * @param s s 辅助表，用于记录最优值m[i,j]对应的分割点k
+     * 打印完全括号化的矩阵乘法链
+     * @param s 辅助表，用于记录最优值m[i,j]对应的分割点k
      * @param i 矩阵链乘法起点Ai
      * @param j 矩阵链乘法终点Aj
      */
@@ -89,9 +89,30 @@ public class MatrixChainMultiplication {
         }
     }
     
+    /**
+     * 根据最优括号化进行矩阵链乘法
+     * @param p 矩阵规模序列
+     * @param s 辅助表，用于记录最优值m[i,j]对应的分割点k
+     * @param i 矩阵链乘法起点Ai
+     * @param j 矩阵链乘法起点Aj
+     * @return 最优括号化矩阵链(Ai...Aj)的乘积
+     */
+    public static int multiply(int[] p, int[][] s, int i, int j) {
+        if (i == j)
+            return 0;
+        if (j-i == 1)
+            return p[i-1]*p[i]*p[j];
+        else {
+            int ml = multiply(p, s, i, s[i][j]);
+            int mr = multiply(p, s, s[i][j]+1, j);
+            int mm = p[i-1] * p[s[i][j]] * p[j];
+            return ml+mr+mm;
+        }
+    }
+    
     public static void main(String[] args) {
-//        int p[] = {30, 35, 15, 5, 10, 20, 25};
-        int p[] = {5, 10, 3, 12, 5, 50, 6};
+        int p[] = {30, 35, 15, 5, 10, 20, 25};
+//        int p[] = {5, 10, 3, 12, 5, 50, 6};
         int sz = p.length;
         int[][] m = new int[sz][sz];
         int[][] s = new int[sz][sz];
@@ -100,7 +121,15 @@ public class MatrixChainMultiplication {
         matrixChainMemorized(p, m, s);
         printOptimalParens(s, 1, 6);
         System.out.println();
+        
         printMatrix(s);
+        System.out.println();
+        
+        printMatrix(m);
+        System.out.println();
+        
+        int result = multiply(p, s, 1, sz-1);
+        System.out.println(result);
     }
     
     public static void printMatrix(int[][] matrix) {
