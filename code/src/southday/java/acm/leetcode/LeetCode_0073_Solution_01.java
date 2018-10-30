@@ -45,7 +45,7 @@ Follow up:
  * @author southday
  * @date 2018年10月23日
  */
-public class LeetCode_0073_Soution_01 {
+public class LeetCode_0073_Solution_01 {
     public static void setZero(int[][] matrix) {
         if (matrix == null)
             return;
