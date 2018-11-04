@@ -52,4 +52,15 @@ public class LeetCode_0079_Solution_01 {
         board[i][j] ^= 256;
         return b;
     }
+    
+    public static void main(String[] args) {
+        LeetCode_0079_Solution_01 o = new LeetCode_0079_Solution_01();
+        char[][] board = {{'A','B','C','E'},
+                          {'S','F','C','S'},
+                          {'A','D','E','E'}};
+        String wd1 = "ABCCED";
+        System.out.println(wd1 + " : " + o.exist(board, wd1));
+        String wd2 = "ABCB";
+        System.out.println(wd2 + " : " + o.exist(board, wd2));
+    }
 }
