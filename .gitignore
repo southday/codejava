@@ -2,12 +2,14 @@
 # date    2018-11-11
 # version 1
 
+# common
 *.class
 .settings/
 bin/
 .classpath
 .project
 
-# for IDEA
+# IDEA
 .idea/
-code.iml
+*.iml
+target/
