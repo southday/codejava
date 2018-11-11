@@ -1,4 +1,4 @@
-﻿package southday.java.basic.other;
+package southday.java.basic.other;
 
 import java.io.IOException;
 import java.io.PrintStream;

@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 /*
  * 需求：简单的卖票程序：多个窗口同时卖票
  * 通过分析发现，打印出了0，-1，-2等错票，多线程的运行出现了安全问题

@@ -1,4 +1,4 @@
-﻿package southday.java.basic.collection;
+package southday.java.basic.collection;
 import java.util.*;
     
 // 用用链表LinkedList模拟堆栈结构【FILO】和队列结构【FIFO】

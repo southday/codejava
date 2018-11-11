@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 import java.io.*;
 /*
 已知BufferedReader中的readLine()是基于read()实现的，

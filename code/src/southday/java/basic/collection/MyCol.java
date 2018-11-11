@@ -1,4 +1,4 @@
-﻿package southday.java.basic.collection;
+package southday.java.basic.collection;
 import java.util.*;
 
 public class MyCol {

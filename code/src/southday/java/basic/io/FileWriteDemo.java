@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 import java.io.*;
 /*
   字节流输入输出：   IntputStream    OutputStream

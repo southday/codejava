@@ -1,4 +1,4 @@
-﻿package southday.java.basic.string;
+package southday.java.basic.string;
 /*
 StringBuffer 是字符串缓冲区，是一个容器  ***（1）长度是可变化的  （2）可以操作多个数据类型   （3）最终会通过toString()变成字符串
 —— —— 功能：

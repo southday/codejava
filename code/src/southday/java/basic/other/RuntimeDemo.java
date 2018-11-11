@@ -1,4 +1,4 @@
-﻿package southday.java.basic.other;
+package southday.java.basic.other;
 
 /* Runtime 类
  *     |-- 该类中并没有提供构造函数，说明不可以直接new对象，

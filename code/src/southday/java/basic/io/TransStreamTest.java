@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

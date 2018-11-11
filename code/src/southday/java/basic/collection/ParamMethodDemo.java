@@ -1,4 +1,4 @@
-﻿package southday.java.basic.collection;
+package southday.java.basic.collection;
 
 /*
  * JDK1.5版本新特性   --- 可变参数

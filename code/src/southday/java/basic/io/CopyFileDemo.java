@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 import java.io.*;
 /*将D盘中的p.java文件copy到F盘的p.java中
 abstract void write(char[] cbuf, int off, int len) 

@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 /*
 单例设计模式：一个类中只存在一个对象。
 (1) 饿汉式：建立单例时推荐使用饿汉式。

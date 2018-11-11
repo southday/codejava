@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 
 import java.io.BufferedReader;
 import java.io.IOException;

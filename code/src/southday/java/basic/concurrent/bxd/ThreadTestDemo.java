@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 
 /*
  * 什么时候使用多线程？—— 当你的资源可以被同步执行时 —— 这样可以提高效率!!

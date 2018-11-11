@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 
 /*
  * （1） wait(),notify(),notifyAll()都使用在同步中，因为要对持有监视器（锁）的线程操作，而监视器一定在同步里面，所以要使用在同步中

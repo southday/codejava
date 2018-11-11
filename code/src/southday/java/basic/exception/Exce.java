@@ -1,4 +1,4 @@
-﻿package southday.java.basic.exception;
+package southday.java.basic.exception;
 class Cacu {
     int dec(int a,int b)throws FushuException {
         if(b < 0)

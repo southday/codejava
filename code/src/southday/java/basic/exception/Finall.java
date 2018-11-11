@@ -1,4 +1,4 @@
-﻿package southday.java.basic.exception;
+package southday.java.basic.exception;
 interface Shape {
     void getArea();
 }

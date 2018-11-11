@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 
 /*
  * 当没有指定的方式让线程恢复要运行状态时，这时需要对线程的冻结状态进行清除，

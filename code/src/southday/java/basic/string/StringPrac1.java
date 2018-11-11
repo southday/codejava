@@ -1,4 +1,4 @@
-﻿package southday.java.basic.string;
+package southday.java.basic.string;
 /*练习1：
 1.模拟一个trim方法，除去字符串两端的空格
   (1)判断字符串的第一个位置是否为空格，如果是则继续向下判断，直到不是空格为止；结尾处判断空格也是如此。

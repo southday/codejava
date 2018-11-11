@@ -1,4 +1,4 @@
-﻿package southday.java.basic.genericity;
+package southday.java.basic.genericity;
 
 /*
  * 什么时候定义泛型类？

@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 //写一个死锁程序
 //例子：关于售票的死锁程序
 

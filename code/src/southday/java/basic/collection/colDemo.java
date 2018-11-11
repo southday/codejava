@@ -1,4 +1,4 @@
-﻿package southday.java.basic.collection;
+package southday.java.basic.collection;
 import java.util.*;
 /*
 1.add()方法的参数类型是 Object，以便于接受任意类型的对象

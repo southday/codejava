@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 /*
 * 举一个售票的例子，采用两个线程。售100张票；
 * 来讨论同步函数的锁是this 而不是像同步代码块中的obj对象

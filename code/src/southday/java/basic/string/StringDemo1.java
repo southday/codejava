@@ -1,4 +1,4 @@
-﻿package southday.java.basic.string;
+package southday.java.basic.string;
 /*
 String 类使用于描述字符串事物：
 那么他就提供了多个方法对字符串进行操作。

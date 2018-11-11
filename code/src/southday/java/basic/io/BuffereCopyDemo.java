@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 import java.io.*;
 //通过缓冲区复制一个.java文件
 public class BuffereCopyDemo {

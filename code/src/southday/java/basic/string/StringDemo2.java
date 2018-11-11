@@ -1,4 +1,4 @@
-﻿package southday.java.basic.string;
+package southday.java.basic.string;
 /*
 4.替换
   String replace(char oldChar, char newChar);

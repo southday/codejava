@@ -1,4 +1,4 @@
-﻿package southday.java.basic.genericity;
+package southday.java.basic.genericity;
 
 import java.util.ArrayList;
 import java.util.Iterator;

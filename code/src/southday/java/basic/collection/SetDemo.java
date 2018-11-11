@@ -1,4 +1,4 @@
-﻿package southday.java.basic.collection;
+package southday.java.basic.collection;
 
 /*
   |——Set: 元素书无序的（存入和取出顺序不一定一致），元素是不重复的

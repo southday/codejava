@@ -1,4 +1,4 @@
-﻿package southday.java.basic.collection;
+package southday.java.basic.collection;
 
 import java.util.*;
 /* 继 ArraysDemo1后，来看看   集合 变  数组

@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 /*
  * 进程：是一个正在执行中的程序，每一个进程都有一个执行顺序，该顺序是一个执行路径，或者叫一个控制单元
  * 线程：就是进程中一个独立的控制单元，线程在控制着进程的执行

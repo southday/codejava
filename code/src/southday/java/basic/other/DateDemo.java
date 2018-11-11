@@ -1,4 +1,4 @@
-﻿package southday.java.basic.other;
+package southday.java.basic.other;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

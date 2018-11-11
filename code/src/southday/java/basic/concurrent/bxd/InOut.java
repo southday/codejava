@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 /*
 import java.util.concurrent.locks.*;
 class Resource {

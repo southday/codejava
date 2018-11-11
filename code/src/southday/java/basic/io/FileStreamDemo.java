@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 
 import java.io.Closeable;
 import java.io.FileInputStream;

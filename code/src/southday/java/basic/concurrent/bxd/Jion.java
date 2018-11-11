@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.bxd;
+package southday.java.basic.concurrent.bxd;
 
 /*
  * 守护线程，具有后台依赖性。前台线程一结束，后台守护线程无存在意义，随之也结束。

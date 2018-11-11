@@ -1,4 +1,4 @@
-﻿package southday.java.basic.io;
+package southday.java.basic.io;
 /*   装饰摸式与继承extends
  （1）继承extends：
  Computer   （父类）  现在需要对其进行功能扩展，如：可以：自定义屏幕背景

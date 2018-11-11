@@ -1,4 +1,4 @@
-﻿package southday.java.basic.concurrent.jmc.c01;
+package southday.java.basic.concurrent.jmc.c01;
 
 public class ThreadDemo1 extends Thread {
     private String mesg;

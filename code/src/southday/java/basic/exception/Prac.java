@@ -1,4 +1,4 @@
-﻿package southday.java.basic.exception;
+package southday.java.basic.exception;
 //毕老师用电脑讲课
 class Teacher {
     private String teacher;

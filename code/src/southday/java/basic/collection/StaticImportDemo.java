@@ -1,4 +1,4 @@
-﻿package southday.java.basic.collection;
+package southday.java.basic.collection;
 
 import java.util.Arrays; // import 后面接 类,可以是单独一个类，也可以是一个包中的所有类
 import static java.util.Arrays.*; // 导入 Arrays 中所有的静态成员(方法 & 变量)
