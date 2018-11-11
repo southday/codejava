@@ -1,0 +1,13 @@
+# Author  southday
+# date    2018-11-11
+# version 1
+
+*.class
+.settings/
+bin/
+.classpath
+.project
+
+# for IDEA
+.idea/
+code.iml
