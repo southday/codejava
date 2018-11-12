@@ -1,41 +1,38 @@
 #### 远程代理
 
-需求：糖果厂总部想要监视分布于各地的糖果机的状态（位置、糖果个数、糖果机状态）
+##### 需求
+
+糖果厂总部想要监视分布于各地的糖果机的状态（位置、糖果个数、糖果机状态）
 
 - 糖果机位置与数目
     + santafe.mightycandy.com 100
     + boulder.mightycandy.com 50
     + seattle.mightycandy.com 60
 
-实现：
+##### 设计
 
 1. 糖果机提供方法：
-- `getCount()`：返回糖果数目
-- `getLocation()`：返回糖果机位置
-- `getState()`：返回糖果机状态
-
+    - `getCount()`：返回糖果数目
+    - `getLocation()`：返回糖果机位置
+    - `getState()`：返回糖果机状态
 2. 糖果厂总部建立监视器Monitor，`report()`远程调用各地糖果机的相应方法，生成报告
 
 使用远程代理（java.rmi.*），Java RMI框架已经帮你完成了网络和I/O部分
 
-1. 创建接口`CandyMachineRemote`
-- `getCount()`：返回糖果数目
-- `getLocation()`：返回糖果机位置
-- `getState()`：返回糖果机状态
-
-2. `CandyMachine`继承`UnicastRemoteObject`并实现`CandyMachineRemote`
-
-3. 在`RMI registry`中注册
-    1) 终端进入到.../YourProject/bin/目录下，运行命令`rmiregistry`
-    2) 将各个地方的糖果机注册到RMI中，例：执行命令`java CandyMachineTestRegist seattle.mightycandy.com 60`
-
-4. 创建监视器类`CandyMachineMonitor`，将`CandyMachineRemote`作为参数传入，以便`report()`调用生成报告
-
-5. 最后运行`CandyMachineTestDrive`进行测试
+3. 创建接口`CandyMachineRemote`
+    - `getCount()`：返回糖果数目
+    - `getLocation()`：返回糖果机位置
+    - `getState()`：返回糖果机状态
+4. `CandyMachine`继承`UnicastRemoteObject`并实现`CandyMachineRemote`
+5. 在`RMI registry`中注册
+    - 终端进入到.../YourProject/bin/目录下，运行命令`rmiregistry`
+    - 将各个地方的糖果机注册到RMI中，例：执行命令`java CandyMachineTestRegist seattle.mightycandy.com 60`
+6. 创建监视器类`CandyMachineMonitor`，将`CandyMachineRemote`作为参数传入，以便`report()`调用生成报告
+7. 最后运行`CandyMachineTestDrive`进行测试
 
 ---
 
-结构：
+##### 结构
 
 ```text
 客户端 <-----> 客户端Stub <-----------> 服务端skeleton <--------> 服务对象candyMachine
