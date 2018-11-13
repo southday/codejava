@@ -16,7 +16,6 @@ for i行
 
 public class JZOffer_65_Solution_01 {
     boolean[] vis = null;
-    int d[][] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; // 方向：顺时针 → ↓ ← ↑
     int rn = 0, cn = 0; // 行数，列数
     
     public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
@@ -40,10 +39,10 @@ public class JZOffer_65_Solution_01 {
         if (str[sp] == matrix[k]) {
             if (++sp == str.length) return true;
             vis[k] = true;
-            boolean res = hasPath2(matrix, i+d[0][0], j+d[0][1], str, sp) // →
-                    || hasPath2(matrix, i+d[1][0], j+d[1][1], str, sp) // ↓
-                    || hasPath2(matrix, i+d[2][0], j+d[2][1], str, sp) // ←
-                    || hasPath2(matrix, i+d[3][0], j+d[3][1], str, sp); // ↑
+            boolean res = hasPath2(matrix, i, j+1, str, sp) // →
+                    || hasPath2(matrix, i+1, j, str, sp) // ↓
+                    || hasPath2(matrix, i-1, j, str, sp) // ←
+                    || hasPath2(matrix, i, j-1, str, sp); // ↑
             if (res == true) return true;
             vis[k] = false;
         }
