@@ -1,9 +1,9 @@
 
 - 1.最长公共子序列
-    + [LCSProblem.java](LCSProblem.java)
+    + [LCSProblem.java](./solution/LCSProblem.java)
 - 2.矩阵链乘法
-    + [MatrixChainMultiplication.java](MatrixChainMultiplication.java)
+    + [MatrixChainMultiplication.java](./solution/MatrixChainMultiplication.java)
 - 3.最大连续子数组和
-    + [MaxSubArraySumSolution.java](MaxSubArraySumSolution.java)
+    + [MaxSubArraySumSolution.java](./solution/MaxSubArraySumSolution.java)
 - 4.最优二叉搜索树的构造
-    + [OptimalBSTree.java](OptimalBSTree.java)
+    + [OptimalBSTree.java](./solution/OptimalBSTree.java)

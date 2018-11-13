@@ -1,4 +1,4 @@
-package southday.java.acm.leetcode;
+package southday.java.acm.leetcode.solution;
 
 /*
 73. Set Matrix Zeroes https://leetcode.com/problems/set-matrix-zeroes/description/

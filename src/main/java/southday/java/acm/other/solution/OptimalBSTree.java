@@ -1,4 +1,4 @@
-package southday.java.acm.other;
+package southday.java.acm.other.solution;
 
 import southday.java.acm.AcmUtil;
 

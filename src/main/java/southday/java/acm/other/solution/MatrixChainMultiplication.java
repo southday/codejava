@@ -1,4 +1,4 @@
-package southday.java.acm.other;
+package southday.java.acm.other.solution;
 
 /* 矩阵链乘法问题描述：
  * 给定n个矩阵的链<A1,A2,...,An>，矩阵Ai的规模是pi-1 X pi (1<=i<=n)，

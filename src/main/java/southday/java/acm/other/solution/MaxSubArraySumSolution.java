@@ -1,4 +1,4 @@
-package southday.java.acm.other;
+package southday.java.acm.other.solution;
 
 import java.util.ArrayList;
 import java.util.List;

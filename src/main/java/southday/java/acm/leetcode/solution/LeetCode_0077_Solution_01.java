@@ -1,4 +1,4 @@
-package southday.java.acm.leetcode;
+package southday.java.acm.leetcode.solution;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package southday.java.acm.other;
+package southday.java.acm.other.solution;
 
 /* X = {A, B, C, B, D, A, B}
  * Y = {B, D, C, A, B, A}
