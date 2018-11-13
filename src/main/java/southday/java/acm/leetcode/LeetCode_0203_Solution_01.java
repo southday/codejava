@@ -1,5 +1,6 @@
 package southday.java.acm.leetcode;
 
+import southday.java.acm.leetcode.common.LeetCodeUtil;
 import southday.java.acm.leetcode.common.ListNode;
 
 /* 
@@ -39,32 +40,13 @@ public class LeetCode_0203_Solution_01 {
         return p.next;
     }
     
-    public ListNode generate(int[] ls) {
-        ListNode p = new ListNode(0);
-        ListNode q = p;
-        for (int a : ls) {
-            p.next = new ListNode(a);
-            p = p.next;
-        }
-        p.next = null;
-        return q.next;
-    }
-    
-    public void print(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
-        System.out.println();
-    }
-    
     public static void main(String[] args) {
         LeetCode_0203_Solution_01 o = new LeetCode_0203_Solution_01();
         int[] arr = {1, 2, 4, 5, 4, 6};
-        ListNode head = o.generate(arr);
-        o.print(head);
+        ListNode head = LeetCodeUtil.generate(arr);
+        LeetCodeUtil.printListNodes(head);
         ListNode nh = o.removeElements(head, 4);
-        o.print(nh);
+        LeetCodeUtil.printListNodes(nh);
     }
     
 }
