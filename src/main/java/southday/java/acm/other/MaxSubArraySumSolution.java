@@ -3,14 +3,15 @@ package southday.java.acm.other;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
+ * 最大连续子数组和问题
  * 输入：int[] array，包含正负整数
  * 输出：最大子数组的和，以及起始位，结束位
  * 如：
  * 输入：[-1, 2, 3, -4]
  * 输出：5 1 2
  * 
- * 包括有多组最大子数组
+ * 包括有多组最大连续子数组
  */
 public class MaxSubArraySumSolution {
     
