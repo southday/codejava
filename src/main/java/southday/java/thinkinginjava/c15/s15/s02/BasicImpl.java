@@ -1,4 +1,4 @@
-package southday.java.thinkinginjava.c15.s15;
+package southday.java.thinkinginjava.c15.s15.s02;
 
 public class BasicImpl implements Basic {
     private String value;

@@ -1,4 +1,4 @@
-package southday.java.thinkinginjava.c15.s04;
+package southday.java.thinkinginjava.c15.s04.s06;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

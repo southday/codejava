@@ -1,4 +1,4 @@
-package southday.java.thinkinginjava.c15.s04;
+package southday.java.thinkinginjava.c15.s04.s04;
 
 import southday.java.thinkinginjava.c15.s03.Generator;
 

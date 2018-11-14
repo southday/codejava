@@ -1,4 +1,4 @@
-package southday.java.thinkinginjava.c15.s12;
+package southday.java.thinkinginjava.c15.s12.s03;
 
 interface OrdinaryGetter {
     Base get();

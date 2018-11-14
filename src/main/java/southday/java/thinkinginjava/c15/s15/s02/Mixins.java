@@ -1,4 +1,4 @@
-package southday.java.thinkinginjava.c15.s15;
+package southday.java.thinkinginjava.c15.s15.s02;
 
 /* 混型
 在C++中使用多重继承的最大理由，就是为了使用混型，所以 混型 在一定程度上等价于 多重继承的效果
@@ -16,6 +16,11 @@ int main() {
 第2种方法，使用装饰器模式来实现，未展示
 第3中方法，与动态代理结合，该方法是Java中实现混型最贴近的方法，如：DynamicProxyMixin.java
 */
+
+import southday.java.thinkinginjava.c15.s15.s04.SerialNumbered;
+import southday.java.thinkinginjava.c15.s15.s04.SerialNumberedImpl;
+import southday.java.thinkinginjava.c15.s15.s04.TimeStamped;
+import southday.java.thinkinginjava.c15.s15.s04.TimeStampedImpl;
 
 /* 使用代理模式
 把getSerialNumber()和 getStamp() 方法转交给内置的代理对象；

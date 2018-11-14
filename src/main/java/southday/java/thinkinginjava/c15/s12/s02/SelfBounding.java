@@ -1,4 +1,4 @@
-package southday.java.thinkinginjava.c15.s12;
+package southday.java.thinkinginjava.c15.s12.s02;
 
 /* SelfBounded<T extends SelfBounded<T>>
  * 1) 强制泛型当作自己的边界参数来使用；

@@ -1,4 +1,7 @@
-package southday.java.thinkinginjava.c15.s15;
+package southday.java.thinkinginjava.c15.s15.s04;
+
+import southday.java.thinkinginjava.c15.s15.s02.Basic;
+import southday.java.thinkinginjava.c15.s15.s02.BasicImpl;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

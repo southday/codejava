@@ -1,6 +1,4 @@
-package southday.java.thinkinginjava.c15.s08;
-
-import java.lang.reflect.Array;
+package southday.java.thinkinginjava.c15.s08.s02;
 
 /**
  * 成功创建泛型数组的唯一方式就是创建一个被擦除类型的新数组，然后对其转型</br>
