@@ -33,4 +33,47 @@ public class LeetCodeUtil {
         }
         System.out.println();
     }
+
+    /**
+     * 将链表尾节点tail连接到链中某一节点(cycNode)
+     * @param head
+     * @param cyc cycNode的角标(从1开始)
+     * @return
+     */
+    public static ListNode tailConnectTo(ListNode head, int cyc) {
+        if (head == null)
+            return null;
+        ListNode tail = head;
+        ListNode cycNode = null;
+        for (int i = 1; tail.next != null; tail = tail.next, i++)
+            if (cyc == i)
+                cycNode = tail;
+        tail.next = cycNode;
+        return head;
+    }
+
+    /**
+     * 返回一个指定结点nd在某个链表中的位置(角标)
+     * @param head
+     * @param nd
+     * @return 返回index(从1开始)
+     */
+    public static int indexOf(ListNode head, ListNode nd) {
+        for (int i = 1; head != null; i++, head = head.next)
+            if (head == nd)
+                return i;
+        return -1;
+    }
+
+    /**
+     * 返回末尾结点
+     * @param head
+     * @return
+     */
+    public static ListNode last(ListNode head) {
+        if (head == null)
+            return null;
+        for (; head.next != null; head = head.next);
+        return head;
+    }
 }
