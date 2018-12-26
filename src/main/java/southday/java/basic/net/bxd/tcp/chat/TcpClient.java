@@ -96,7 +96,8 @@ class ClientSendThread implements Runnable {
 public class TcpClient {
     public static void main(String[] args) {
         try {
-            InetAddress dst_ip = InetAddress.getByName("113.55.84.249");
+//            InetAddress dst_ip = InetAddress.getByName("113.55.84.249");
+            InetAddress dst_ip = InetAddress.getByName("127.0.0.1");
             int dst_port = 10005;
             Socket client = new Socket(dst_ip, dst_port);
             Thread send_thread = new Thread(new ClientSendThread(client));
