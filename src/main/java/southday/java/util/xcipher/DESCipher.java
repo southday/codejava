@@ -59,9 +59,8 @@ public class DESCipher implements XCipher {
         CipherInputStream cins = new CipherInputStream(ins, cipher);
         byte[] buf = new byte[BUFFER_SIZE];
         int len = 0;
-        while ((len = cins.read(buf)) > 0) {
+        while ((len = cins.read(buf)) > 0)
             outs.write(buf, 0, len);
-        }
         cins.close();
         ins.close();
         outs.close();
@@ -75,12 +74,19 @@ public class DESCipher implements XCipher {
         CipherOutputStream cos = new CipherOutputStream(outs, cipher);
         byte[] buf = new byte[BUFFER_SIZE];
         int len = 0;
-        while ((len = ins.read(buf)) > 0) {
+        while ((len = ins.read(buf)) > 0)
             cos.write(buf, 0, len);
-        }
         cos.close();
         outs.close();
         ins.close();
+    }
+
+    public void encrypt(String inPath, String outPath, String key) throws Exception {
+        encrypt(new File(inPath), new File(outPath), key);
+    }
+
+    public void decrypt(String inPath, String outPath, String key) throws Exception {
+        decrypt(new File(inPath), new File(outPath), key);
     }
     
     public static void main(String[] args) throws Exception {
