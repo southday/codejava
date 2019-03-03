@@ -25,15 +25,30 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <!-- 加密工具类使用 -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
       <version>1.10</version>
     </dependency>
+    <!-- thinking in java 中的工具类 -->
     <dependency>
       <groupId>com.github.southday</groupId>
       <artifactId>tij4-mindview</artifactId>
       <version>1.0.0</version>
+    </dependency>
+    <!-- 使用cglib进行动态代理 -->
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.2.9</version>
+    </dependency>
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.2.9</version>
+      <classifier>sources</classifier>
+      <type>java-source</type>
     </dependency>
   </dependencies>
 
