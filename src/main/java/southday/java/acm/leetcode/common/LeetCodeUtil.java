@@ -1,5 +1,7 @@
 package southday.java.acm.leetcode.common;
 
+import java.util.Stack;
+
 /**
  * Author southday
  * Date   2018/11/13
@@ -125,6 +127,92 @@ public class LeetCodeUtil {
             System.out.print(t.val + " ");
             printPreOrder1(t.left);
             printPreOrder1(t.right);
+        }
+    }
+
+    /**
+     * 在二叉树中查找指定val值的TreeNode并返回
+     * @param root
+     * @param val
+     * @return
+     */
+    public static TreeNode findTreeNode(TreeNode root, int val) {
+        if (root != null) {
+            if (root.val == val)
+                return root;
+            TreeNode n1 = findTreeNode(root.left, val);
+            return n1 == null ? findTreeNode(root.right, val) : n1;
+        }
+        return null;
+    }
+
+    /**
+     * 二叉树的中序遍历-非递归实现
+     * @param root
+     */
+    public static void inOrderNonRec(TreeNode root) {
+        if (root == null)
+            return;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        boolean visitedLeft = false;
+        while (!stack.isEmpty()) {
+            TreeNode top = stack.peek();
+            if (!visitedLeft && top.left != null) {
+                stack.push(top.left);
+            } else {
+                top = stack.pop();
+                System.out.print(top.val + ", ");
+                visitedLeft = true;
+                if (top.right != null) {
+                    stack.push(top.right);
+                    visitedLeft = false;
+                }
+            }
+        }
+    }
+
+    /**
+     * 二叉树后序遍历-非递归实现
+     * @param root
+     */
+    public static void postOrderNonRec(TreeNode root) {
+        if (root == null)
+            return;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        TreeNode lastPopNode = null;
+        while (!stack.empty()) {
+            TreeNode top = stack.peek();
+            if (top.right == lastPopNode || (top.left == null && top.right == null)) {
+                lastPopNode = stack.pop();
+                System.out.print(lastPopNode.val + ", ");
+            } else if (top.left != lastPopNode && top.left != null) {
+                stack.push(top.left);
+            } else if (top.right != null) {
+                stack.push(top.right);
+            } else {
+                lastPopNode = null;
+            }
+        }
+    }
+
+    /**
+     * 二叉树先序遍历-非递归实现
+     * @param root
+     */
+    public static void preOrderNonRec(TreeNode root) {
+        if (root == null)
+            return;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.empty()) {
+            TreeNode top = stack.pop();
+            System.out.print(top.val + ", ");
+            if (top.right != null)
+                stack.push(top.right);
+            if (top.left != null)
+                stack.push(top.left);
         }
     }
 }
