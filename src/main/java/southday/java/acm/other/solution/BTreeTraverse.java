@@ -88,15 +88,15 @@ public class BTreeTraverse {
         TreeNode root = LeetCodeUtil.generateByPreOrder(str);
 
         System.out.print("preOrder: ");
-        LeetCodeUtil.preOrderNonRec(root);
+        BTreeTraverse.preOrderNonRec(root);
         System.out.println();
 
         System.out.print("inOrder: ");
-        LeetCodeUtil.inOrderNonRec(root);
+        BTreeTraverse.inOrderNonRec(root);
         System.out.println();
 
         System.out.print("postOrder: ");
-        LeetCodeUtil.postOrderNonRec(root);
+        BTreeTraverse.postOrderNonRec(root);
         System.out.println();
     }
 }
