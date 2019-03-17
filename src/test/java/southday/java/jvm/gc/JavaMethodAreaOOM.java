@@ -1,4 +1,4 @@
-package southday.java.jvm;
+package southday.java.jvm.gc;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

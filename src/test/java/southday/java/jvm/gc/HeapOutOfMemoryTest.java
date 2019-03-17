@@ -1,4 +1,4 @@
-package southday.java.jvm;
+package southday.java.jvm.gc;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package southday.java.jvm;
+package southday.java.jvm.gc;
 
 /**
  * 引用计数算法进行GC测试，测试对象间循环引用时的GC情况<br/>

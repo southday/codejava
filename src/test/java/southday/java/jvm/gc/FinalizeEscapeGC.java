@@ -1,4 +1,4 @@
-package southday.java.jvm;
+package southday.java.jvm.gc;
 
 /**
  * 使用finalize()来逃脱GC（只能逃脱一次，finalize()至多只会被系统调用一次）
