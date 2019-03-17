@@ -11,3 +11,5 @@
     + [OptimalBSTree.java](./solution/OptimalBSTree.java)
 - 5.二叉树先序、中序、后序（非递归实现）
     + [BTreeTraverse.java](./solution/BTreeTraverse.java)
+- 6.判断一个字符串中是否有重复字符
+    + [RepeatCharInString.java](./solution/RepeatCharInString.java)
