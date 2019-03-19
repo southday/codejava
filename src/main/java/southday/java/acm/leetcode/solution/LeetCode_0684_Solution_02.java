@@ -12,12 +12,10 @@ public class LeetCode_0684_Solution_02 {
 
     public int[] findRedundantConnection(int[][] edges) {
         init();
-        for (int i = 0, len = edges.length; i < len; i++) {
-            for (int[] edge : edges) {
-                if (father(edge[0]) == father(edge[1]))
-                    return edge;
-                union(edge[0], edge[1]);
-            }
+        for (int[] edge : edges) {
+            if (father(edge[0]) == father(edge[1]))
+                return edge;
+            union(edge[0], edge[1]);
         }
         throw new AssertionError();
     }
