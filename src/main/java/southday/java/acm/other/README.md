@@ -13,3 +13,5 @@
     + [BTreeTraverse.java](./solution/BTreeTraverse.java)
 - 6.判断一个字符串中是否有重复字符
     + [RepeatCharInString.java](./solution/RepeatCharInString.java)
+- 7.人民币数字大写转换
+    + [RMBCapitalFigureTranslator.java](./solution/RMBCapitalFigureTranslator.java)
