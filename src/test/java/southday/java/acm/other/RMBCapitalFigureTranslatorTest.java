@@ -52,6 +52,8 @@ public class RMBCapitalFigureTranslatorTest {
         test03("￥301.00"); // 人民币叁佰零壹元整
         test03("￥10107000"); // 人民币壹仟零壹拾万零柒仟元整
         test03("￥101.00.0"); // null
+        test03("￥0.54"); // 人民币伍角肆分
+        test03("￥0.03"); // 人民币叁分
     }
 
     private void test03(String s) {

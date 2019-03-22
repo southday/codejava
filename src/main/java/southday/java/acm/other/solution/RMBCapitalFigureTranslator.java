@@ -16,7 +16,7 @@ http://staff.ustc.edu.cn/~shizhu/zlbz/1.txt
 4、阿拉伯金额数字角位是"0"，而分位不是"0"时，中文大写金额"元"后面应写"零"字。如￥16409.02，应写成人民币：壹万陆仟肆佰零玖元零贰分；又如￥325.04，应写成人民币叁佰贰拾伍元零肆分。
  */
 
-import java.util.Stack;
+import java.util.LinkedList;
 
 /**
  * 软测实验1-人民币大写数字转换
@@ -30,8 +30,29 @@ public class RMBCapitalFigureTranslator {
     private static final String[] unit = {"元", "万", "亿"};
     private static final String[] degree = {"", "拾", "佰", "仟"};
     private static final String prompt = "请输入格式为：\"￥xxxxxxxxxxxx.yy\"的字符串：\n"
-            + "- x...x最多有12位，且最高位（左高->右低）不能以0开始；\n"
+            + "- x...x最多有12位，若整数部分值不为0，则最高位（左高->右低）不能以0开始；\n"
             + "- .yy不是必须存在的，其可以为：.y0 .0y .00 的格式；";
+
+    private enum ErrorCode {
+        INPUT_NULL,
+        FORMAT_ERROR
+    }
+
+    /**
+     * 打印提示信息
+     * @param number 用户输入的字符串
+     * @param code 提示码，不同的code对应不同的提示信息
+     */
+    private static void printPrompt(String number, ErrorCode code) {
+        System.out.println("---------------------------------------------------------------------------");
+        if (code == ErrorCode.INPUT_NULL) {
+            System.out.println("转换失败：输入为空字符串，number = \"\"");
+        } else if (code == ErrorCode.FORMAT_ERROR) {
+            System.out.println("转换失败，输入格式错误，number = \"" + number + "\"");
+        }
+        System.out.println(prompt);
+        System.out.println("---------------------------------------------------------------------------");
+    }
 
     /**
      * 输入一个数字字符串，转换为人民币大写形式
@@ -40,8 +61,7 @@ public class RMBCapitalFigureTranslator {
      */
     public static String translate(String number) {
         if (number == null || number.trim().length() == 0) {
-            System.out.println("转换失败：输入为空字符串，number = \"\"");
-            System.out.println(prompt);
+            printPrompt(number, ErrorCode.INPUT_NULL);
             return null;
         }
         int rp = 0;
@@ -63,8 +83,7 @@ public class RMBCapitalFigureTranslator {
             }
             result = dpart == null ? ipart  + "整" : ipart + dpart;
         } else {
-            System.out.println("转换失败，输入格式错误，number = \"" + number + "\"");
-            System.out.println(prompt);
+            printPrompt(number, ErrorCode.FORMAT_ERROR);
         }
         return result == null ? null : "人民币" + result;
     }
@@ -78,7 +97,7 @@ public class RMBCapitalFigureTranslator {
         StringBuilder sb = new StringBuilder(ipart);
         char[] s = sb.reverse().toString().toCharArray();
         sb.delete(0, sb.length());
-        Stack<String> stack = new Stack<>();
+        LinkedList<String> stack = new LinkedList<>();
         boolean zflag = false; // 是否写"零"
         boolean changeOrder; // 标记：单位与"零"是否改变先后顺序，见例子：107000，应写为：壹拾万零柒仟元
         int lastNZIndex = 0; // 上一个非零数的角标
