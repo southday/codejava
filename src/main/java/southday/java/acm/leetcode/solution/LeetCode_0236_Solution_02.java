@@ -3,7 +3,7 @@ package southday.java.acm.leetcode.solution;
 import southday.java.acm.leetcode.common.LeetCodeUtil;
 import southday.java.acm.leetcode.common.TreeNode;
 
-import java.util.Stack;
+import java.util.LinkedList;
 
 /**
  * 自己写的非递归版本实现<br/>
@@ -16,12 +16,15 @@ public class LeetCode_0236_Solution_02 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null)
             return null;
-        Stack<TreeNode> stack = new Stack<>();
-        Stack<Integer> foundLCAStack = new Stack<>();
+        /*
+        一开始以为是用Stack（同步）的原因导致Time Limit，结果换成LinkedList后也是一样；
+         */
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        LinkedList<Integer> foundLCAStack = new LinkedList<>();
         stack.push(root);
         foundLCAStack.push(0);
         TreeNode lastPopNode = null;
-        while (!stack.empty()) {
+        while (!stack.isEmpty()) {
             TreeNode top = stack.peek();
             if (top.right == lastPopNode || (top.left == null && top.right == null)) {
                 lastPopNode = stack.pop();
