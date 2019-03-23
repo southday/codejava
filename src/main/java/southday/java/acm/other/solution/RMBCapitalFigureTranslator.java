@@ -98,27 +98,32 @@ public class RMBCapitalFigureTranslator {
         char[] s = sb.reverse().toString().toCharArray();
         sb.delete(0, sb.length());
         LinkedList<String> stack = new LinkedList<>();
-        boolean zflag = false; // 是否写"零"
+        boolean needZero = false; // 是否写"零"
         boolean changeOrder; // 标记：单位与"零"是否改变先后顺序，见例子：107000，应写为：壹拾万零柒仟元
+        boolean allZero; // 一个区间（每4个位一个区间）内的数值是否全为0
         int lastNZIndex = 0; // 上一个非零数的角标
         for (int k = 0; k < s.length; k += 4) {
             changeOrder = false;
+            allZero = true;
             for (int i = 0; i < 4 && k+i < s.length; i++) {
                 if (s[k+i] == '0') {
-                    // zflag == true 并且本次角标与上一次非零数角标要在同一区间（每4个位一个区间）
-                    if (zflag && (k+i)/4 == lastNZIndex/4) {
+                    // needZero == true 并且本次角标与上一次非零数角标要在同一区间（每4个位一个区间）
+                    if (needZero && (k+i)/4 == lastNZIndex/4) {
                         sb.append("零");
-                        zflag = false;
-                    } else if (zflag && (k+i)/4 != lastNZIndex/4) { // 说明单位与"零"的先后顺序需要交换
+                        needZero = false;
+                    } else if (needZero && (k+i)/4 != lastNZIndex/4) { // 说明单位与"零"的先后顺序需要交换
                         changeOrder = true;
                     }
                 } else {
                     sb.append(degree(i) + capital(s[k+i])); // 需要反转
-                    zflag = true;
+                    needZero = true;
                     lastNZIndex = k + i;
+                    allZero = false;
                 }
             }
-            sb.reverse().append(unit(k));
+            sb.reverse();
+            if (!allZero)
+                sb.append(unit(k));
             if (changeOrder)
                 sb.append("零");
             stack.push(sb.toString());
