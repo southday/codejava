@@ -13,10 +13,12 @@ package southday.java.basic.sort;
  * 
  * merger     O(nlog2n)    O(nlog2n)    O(nlog2n)      O(n)                Y
  * radix      O(d(r+n))    O(d(n+r*d))  O(d(r+n))      O(r*d+n)            Y
- * (In BarrelSort, r for the radix of keys, d for length, n for the number of keys)
+ * (In BarrelSorter, r for the radix of keys, d for length, n for the number of keys)
  */
 
-public class Sorter {
+public abstract class Sorter {
+    public abstract void sort(double[] arr);
+    public abstract void sort(int[] arr);
     
     public static void swap(double[] arr, int i, int j) {
         double temp = arr[i];
@@ -28,5 +30,13 @@ public class Sorter {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }    
+    }
+
+    public static int findMax(int[] arr) {
+        int maxv = arr[0];
+        for (int i = 1; i < arr.length; i++)
+            if (arr[i] > maxv)
+                maxv = arr[i];
+        return maxv;
+    }
 }
