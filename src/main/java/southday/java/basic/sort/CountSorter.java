@@ -8,9 +8,15 @@ package southday.java.basic.sort;
  * @author southday
  * @date 2019/4/29
  */
-public class CountSorter {
+public class CountSorter extends Sorter {
 
-    public int[] sort(int[] arr) {
+    @Override
+    public void sort(double[] arr) {
+
+    }
+
+    @Override
+    public void sort(int[] arr) {
         int maxv = Sorter.findMax(arr);
         int[] cnt = new int[maxv+1]; // [0...mav]
         for (int i = 0; i <= maxv; i++)
@@ -32,6 +38,7 @@ public class CountSorter {
             result[cnt[arr[i]]-1] = arr[i];
             cnt[arr[i]]--;
         }
-        return result;
+        for (int i = 0; i < arr.length; i++)
+            arr[i] = result[i];
     }
 }
