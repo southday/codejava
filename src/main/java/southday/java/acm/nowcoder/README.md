@@ -10,6 +10,9 @@
     + [JZOffer_04_Solution_01.java](jzoffer/JZOffer_04_Solution_01.java)
 - [5.用两个栈实现队列](https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
     + [JZOffer_05_Solution_01.java](jzoffer/JZOffer_05_Solution_01.java)
+    + [JZOffer_05_Solution_02.java](jzoffer/JZOffer_05_Solution_02.java)
+- [5.1 延伸：用两个队列实现栈]
+    + [StackInTwoQueue.java](jzoffer/StackInTwoQueue.java)
 - [6.旋转数组的最小数字](https://www.nowcoder.com/practice/9f3231a991af4f55b95579b44b7a01ba?tpId=13&tqId=11159&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
     + [JZOffer_06_Solution_01.java](jzoffer/JZOffer_06_Solution_01.java)
 - [7.斐波那契数列](https://www.nowcoder.com/practice/c6c7742f5ba7442aada113136ddea0c3?tpId=13&tqId=11160&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
