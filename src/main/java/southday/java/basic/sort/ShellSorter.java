@@ -9,16 +9,14 @@ public class ShellSorter extends Sorter {
 
     @Override
     public void sort(double[] arr) {
-        int inc = arr.length >> 1;
-        while (inc > 0) {
-            for (int i = inc; i < arr.length; i += inc) {
+        for (int inc = arr.length/2; inc > 0; inc /= 2) {
+            for (int i = inc; i < arr.length; i++) {
                 double key = arr[i];
                 int j = i - inc;
                 for (; j >= 0 && arr[j] > key; j -= inc)
                     arr[j+inc] = arr[j];
                 arr[j+inc] = key;
             }
-            inc >>= 1;
         }
     }
 

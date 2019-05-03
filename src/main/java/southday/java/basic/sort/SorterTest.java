@@ -68,10 +68,10 @@ public class SorterTest {
      * 归并排序
      */
     @Test
-    public void testMergerSort() {
+    public void testMergeSort() {
         double[] source = {128.23, 0.0, -23.83, 94, 19848.48, 405.984, -85.3};
         double[] target = {-85.3, -23.83, 0.0, 94.0, 128.23, 405.984, 19848.48};
-        testSorter(new MergerSorter(), source, target);
+        testSorter(new MergeSorter(), source, target);
     }
 
     /**

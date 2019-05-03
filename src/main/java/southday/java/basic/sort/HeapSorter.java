@@ -24,23 +24,28 @@ public class HeapSorter extends Sorter {
     }
 
     private void buildMaxHeap(double[] arr) {
-        for (int i = (heapSize - 1) >> 1; i >= 0; i--)
+        for (int i = lastFather(); i >= 0; i--)
             fixMaxHeap(arr, i);
     }
     
     // maintains the max heap
     private void fixMaxHeap(double[] arr, int i) {
-        int left = leftChild(i);
-        int right = rightChild(i);
-        int largest;
-        
-        largest = (left < heapSize && arr[left] > arr[i]) ? left : i;
-        if (right < heapSize && arr[right] > arr[largest])
-            largest = right;
-        if (largest != i) {
-            Sorter.swap(arr, largest, i);
-            fixMaxHeap(arr, largest);
+        if (i <= lastFather()) {
+            int left = leftChild(i);
+            int right = rightChild(i);
+            int maxIndex;
+            maxIndex = arr[left] > arr[i] ? left : i;
+            if (right < heapSize && arr[right] > arr[maxIndex])
+                maxIndex = right;
+            if (maxIndex != i) {
+                Sorter.swap(arr, maxIndex, i);
+                fixMaxHeap(arr, maxIndex);
+            }
         }
+    }
+    
+    private int lastFather() {
+        return heapSize/2 - 1;
     }
     
     private int leftChild(int i) {
