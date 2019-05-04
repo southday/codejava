@@ -21,9 +21,9 @@ public class RadixSorter extends Sorter {
 
     private void bubbleSort(int[] arr, int k) {
         boolean over = false;
-        while (!over) {
+        for (int n = arr.length; !over && n > 1; n--) {
             over = true;
-            for (int i = 0; i < arr.length-1; i++) {
+            for (int i = 0; i < n-1; i++) {
                 int p = kthNum(arr[i], k);
                 int q = kthNum(arr[i+1], k);
                 if (p > q) {
