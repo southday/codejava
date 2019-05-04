@@ -27,7 +27,7 @@ public class QuickSorter extends Sorter {
         int i = head - 1;
         for (int j = head; j < tail; j++) {
             if (arr[j] < arr[tail])
-                Sorter.swap(arr, ++i, j);
+                swap(arr, ++i, j);
         }
         Sorter.swap(arr, i + 1, tail);
         return i + 1;

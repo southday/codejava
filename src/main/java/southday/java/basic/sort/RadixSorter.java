@@ -5,7 +5,7 @@ package southday.java.basic.sort;
  * @author southday
  * @date 2019/4/29
  */
-public class RadixSort extends Sorter {
+public class RadixSorter extends Sorter {
     @Override
     public void sort(double[] arr) {}
 
@@ -27,7 +27,7 @@ public class RadixSort extends Sorter {
                 int p = kthNum(arr[i], k);
                 int q = kthNum(arr[i+1], k);
                 if (p > q) {
-                    Sorter.swap(arr, i, i+1);
+                    swap(arr, i, i+1);
                     over = false;
                 }
             }

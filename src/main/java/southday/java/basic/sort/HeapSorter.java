@@ -17,7 +17,7 @@ public class HeapSorter extends Sorter {
         heapSize = arr.length;
         buildMaxHeap(arr);
         for (int i = heapSize - 1; i >= 1; i--) {
-            Sorter.swap(arr, 0, i);
+            swap(arr, 0, i);
             heapSize--;
             fixMaxHeap(arr, 0);
         }
@@ -38,7 +38,7 @@ public class HeapSorter extends Sorter {
             if (right < heapSize && arr[right] > arr[maxIndex])
                 maxIndex = right;
             if (maxIndex != i) {
-                Sorter.swap(arr, maxIndex, i);
+                swap(arr, maxIndex, i);
                 fixMaxHeap(arr, maxIndex);
             }
         }

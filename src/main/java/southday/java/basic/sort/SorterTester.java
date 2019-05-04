@@ -72,9 +72,9 @@ public class SorterTester {
     @Test
     public void testRadixSort() {
         int[] source1 = {8234, 19, 0, 84, 8, 188392, 9294, 184, 285, 8332, 9852};
-        testSort(new RadixSort(), source1);
+        testSort(new RadixSorter(), source1);
         int[] source2 = {8234, 19, 0, 84, 8, 188392, 9294, 184, 285, 8332};
-        testSort(new RadixSort(), source2);
+        testSort(new RadixSorter(), source2);
     }
 
     /**
