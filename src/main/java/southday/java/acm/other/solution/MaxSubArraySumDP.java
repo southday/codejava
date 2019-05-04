@@ -26,9 +26,26 @@ public class MaxSubArraySumDP {
         return maxv;
     }
 
+    /* 对上面的 w[] 进行优化，将空间复杂度减小为 O(1)
+     1) 发现我们使用的w[]只有 w[i]，w[i-1]
+     2) 而w[i]的求解也只和 w[i-1]（即w[i]的前一个状态）、nums[i]有关
+     3) 并且i是递增的，也就是说我们其实只需要设置一个变量就可以替代w[]
+     */
+    public int maxSubArrayOptimize(int[] A) {
+        int maxEnd = A[0]; // 以 A[i] 结尾的最大子数组和
+        int maxAll = A[0]; // A[0..i] 的最大子数组和
+        for (int i = 1; i < A.length; i++) {
+            maxEnd = maxEnd + A[i] >= A[i] ? maxEnd + A[i] : A[i];
+            if (maxAll < maxEnd)
+                maxAll = maxEnd;
+        }
+        return maxAll;
+    }
+
     public static void main(String[] args) {
         MaxSubArraySumDP o = new MaxSubArraySumDP();
         int A[] = {0, 13, -3, -25, 20, 3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
         System.out.println("sum = " + o.maxSubArray(A));
+        System.out.println("sum = " + o.maxSubArrayOptimize(A));
     }
 }
