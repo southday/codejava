@@ -4,6 +4,9 @@
 
 - [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
     + [LeetCode_0021_Solution_01.java](./solution/LeetCode_0021_Solution_01.java)
+- [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+    + [动态规划：LeetCode_0053_Solution_01.java](./solution/LeetCode_0053_Solution_01.java)
+    + [分治法：LeetCode_0053_Solution_02.java](./solution/LeetCode_0053_Solution_02.java)
 - [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
     + [LeetCode_0104_Solution_01.java](./solution/LeetCode_0104_Solution_01.java)
 - [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/description/)

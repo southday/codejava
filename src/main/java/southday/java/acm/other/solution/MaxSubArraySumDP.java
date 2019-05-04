@@ -16,7 +16,8 @@ public class MaxSubArraySumDP {
 
     public int maxSubArray(int A[]) {
         int[] w = new int[A.length];
-        int maxv = 0;
+        int maxv = A[0];
+        w[0] = A[0];
         for (int i = 1; i < w.length; i++) {
             w[i] = w[i - 1] + A[i] >= A[i] ? w[i - 1] + A[i] : A[i];
             if (maxv < w[i])
@@ -27,7 +28,6 @@ public class MaxSubArraySumDP {
 
     public static void main(String[] args) {
         MaxSubArraySumDP o = new MaxSubArraySumDP();
-        // A[0] 不使用，真正的数据从A[1]开始
         int A[] = {0, 13, -3, -25, 20, 3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
         System.out.println("sum = " + o.maxSubArray(A));
     }
