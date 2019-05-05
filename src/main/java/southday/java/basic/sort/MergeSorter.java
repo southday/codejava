@@ -1,5 +1,7 @@
 package southday.java.basic.sort;
 
+import java.util.Arrays;
+
 /**
  * 归并排序
  * @author southday
@@ -27,16 +29,17 @@ public class MergeSorter extends Sorter {
     
     private void merge(double[] arr, int p, int q, int r) {
         // merge [p, q] and [q + 1, r] -> [p, r]
-        int i = p, j = q + 1, pos = p;
-        double[] arrClone = arr.clone();
-        while (i <= q && j <= r) {
-            if (arrClone[i] < arrClone[j])
-                arr[pos++] = arrClone[i++];
+        double[] L = Arrays.copyOfRange(arr, p, q+1);
+        double[] R = Arrays.copyOfRange(arr, q+1, r+1);
+        int i = 0, j = 0;
+        while (i < L.length && j < R.length) {
+            if (L[i] < R[j])
+                arr[p++] = L[i++];
             else
-                arr[pos++] = arrClone[j++];
+                arr[p++] = R[j++];
         }
         // only one for{} be executed
-        for (; i <= q; arr[pos++] = arrClone[i++]);
-        for (; j <= r; arr[pos++] = arrClone[j++]);
+        for (; i < L.length; arr[p++] = L[i++]);
+        for (; j < R.length; arr[p++] = R[j++]);
     }
 }
