@@ -15,3 +15,7 @@
     + [RepeatCharInString.java](./solution/RepeatCharInString.java)
 - 7.人民币数字大写转换
     + [RMBCapitalFigureTranslator.java](./solution/RMBCapitalFigureTranslator.java)
+- 8.找出数组中只出现一次的数字
+    + [OnlyOnceNumber.java](./solution/OnlyOnceNumber.java)
+- 9.按要求打印数组的排列情况
+    + [RequiredPermutation.java](./solution/RequiredPermutation.java)
