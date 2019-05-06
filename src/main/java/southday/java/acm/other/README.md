@@ -19,3 +19,7 @@
     + [OnlyOnceNumber.java](./solution/OnlyOnceNumber.java)
 - 9.按要求打印数组的排列情况
     + [RequiredPermutation.java](./solution/RequiredPermutation.java)
+- 10.找出数组中第k小的数
+    + [KthMinNumber.java](./solution/KthMinNumber.java)
+- 11.对数组的两个子有序段进行合并（O(1)空间复杂度）
+    + [MergeOrderedSubArray.java](./solution/MergeOrderedSubArray.java)
