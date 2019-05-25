@@ -21,3 +21,18 @@
 1. 设计适配器`DogAdapter`来适配(实现)`Dog`(接口)，适配器中包含了`Cat`对象引用
 2. 将`Dog`中的`wangwang()`和`run()`交给内置`Cat`的`miaomiao()`和`run()`来完成
 3. 通过`AdapterTestDrive`来测试适配器模式
+
+**适配器模式和代理模式的区别（我的理解）：**
+
+1. 适配器模式注重适配，是用户想要`Dog`接口的对象，而我只有`Cat`接口的对象，所以需要将`Cat`对象转为`Dog`对象去使用，即：创建一个`DogAdapter`来将`Cat`适配到`Dog`；
+2. 代理模式注重的是对目标对象的访问控制等，是原本要直接访问目标对象`target`，但是我们有需求，要在访问`target`之前或之后做一些操作，所以用代理对象来控制对`target`的访问，以完成这些前置或后置的操作；
+
+**动态代理和装饰器模式的区别（我的理解）：**
+
+1. 动态代理可以对所有方法进行统一代理，而装饰器模式若想实现同样的效果，需要在每个方法中都添加装饰代码，比较麻烦；
+2. 动态代理在创建出代理对象后，被代理者就已经确定了，一般在其生命周期能不会改变。而装饰器模式，如果设置有setter()方法，可以在运行时动态改变被装饰的类；
+3. 动态代理的代理类可以动态生成（基于JDK或者CGLIB生成代理类），而装饰器的装饰类是在编译期就存在的；
+
+参考资料：
+- Java设计模式之装饰器模式(Decorator)：[https://blog.csdn.net/zaoan_2010/article/details/83308891](https://blog.csdn.net/zaoan_2010/article/details/83308891)
+- java动态代理实现与原理详细分析：[https://www.cnblogs.com/gonjan-blog/p/6685611.html](https://www.cnblogs.com/gonjan-blog/p/6685611.html)
