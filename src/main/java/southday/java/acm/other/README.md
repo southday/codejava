@@ -9,7 +9,7 @@
     + [MaxSubArraySumDP.java](./solution/MaxSubArraySumDP.java)
 - 4.最优二叉搜索树的构造
     + [OptimalBSTree.java](./solution/OptimalBSTree.java)
-- 5.二叉树先序、中序、后序（非递归实现）
+- 5.二叉树先序、中序、后序（非递归实现）、层序
     + [BTreeTraverse.java](./solution/BTreeTraverse.java)
 - 6.判断一个字符串中是否有重复字符
     + [RepeatCharInString.java](./solution/RepeatCharInString.java)
