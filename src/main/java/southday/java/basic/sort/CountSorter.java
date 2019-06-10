@@ -36,7 +36,7 @@ public class CountSorter extends Sorter {
              * 3) 我们填充 result[] 是从 0 开始计数，所以 m-1 刚好就是 arr[i] 的位置
              */
             result[cnt[arr[i]]-1] = arr[i];
-            cnt[arr[i]]--;
+            cnt[arr[i]]--; // 处理相同元素
         }
         for (int i = 0; i < arr.length; i++)
             arr[i] = result[i];
