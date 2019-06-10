@@ -23,10 +23,12 @@ public class BTreeTraverse {
         while (!stack.empty()) {
             TreeNode top = stack.pop();
             System.out.print(top.val + ", ");
-            if (top.right != null)
+            if (top.right != null) {
                 stack.push(top.right);
-            if (top.left != null)
+            }
+            if (top.left != null) {
                 stack.push(top.left);
+            }
         }
     }
 
@@ -68,15 +70,18 @@ public class BTreeTraverse {
         TreeNode lastPopNode = null;
         while (!stack.empty()) {
             TreeNode top = stack.peek();
-            if (top.right == lastPopNode || (top.left == null && top.right == null)) {
+            if ((top.left == null && top.right == null)
+                || (lastPopNode == top.left && top.right == null)
+                || lastPopNode == top.right) {
                 lastPopNode = stack.pop();
                 System.out.print(lastPopNode.val + ", ");
-            } else if (top.left != lastPopNode && top.left != null) {
-                stack.push(top.left);
-            } else if (top.right != null) {
-                stack.push(top.right);
             } else {
-                lastPopNode = null;
+                if (lastPopNode != top.right && top.right != null) {
+                    stack.push(top.right);
+                }
+                if (lastPopNode != top.left && top.left != null) {
+                    stack.push(top.left);
+                }
             }
         }
     }
