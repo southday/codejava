@@ -32,6 +32,8 @@
     + [LeetCode_0077_Solution_01.java](./solution/LeetCode_0077_Solution_01.java)
 - [79. Word Search](https://leetcode.com/problems/word-search/description/)
     + [LeetCode_0079_Solution_01.java](./solution/LeetCode_0079_Solution_01.java)
+- [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
+    + [LeetCode_0082_Solution_01.java](./solution/LeetCode_0082_Solution_01.java)
 - [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/description/)
     + [LeetCode_0142_Solution_01.java](./solution/LeetCode_0142_Solution_01.java)
 - [151. Reverse Words in a String ](https://leetcode.com/problems/reverse-words-in-a-string/)
