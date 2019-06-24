@@ -15,6 +15,7 @@ public enum Course {
     private Food[] values;
 
     Course(Class<? extends Food> kind) {
+        // 通过getEnumConstants()方法，可以从该Class对象中取得某个Food子类的所有enum实例
         values = kind.getEnumConstants();
     }
 

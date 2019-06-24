@@ -31,4 +31,12 @@ public class JUnitUseCase {
     public void too() {
         System.out.println("after");
     }
+
+    public static void main(String[] args) {
+        String s = "String {}|| vms &*( hello";
+        for (String v : s.split("\\W+")) {
+            System.out.println(v);
+        }
+
+    }
 }
