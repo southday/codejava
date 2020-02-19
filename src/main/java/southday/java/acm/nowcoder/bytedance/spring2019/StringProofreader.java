@@ -54,7 +54,7 @@ public class StringProofreader {
     }
 
     private static String solve(String s) {
-        if (s == null || s.length() < 2) {
+        if (s == null || s.length() < 3) {
             return s;
         }
         char[] cs = s.toCharArray();
