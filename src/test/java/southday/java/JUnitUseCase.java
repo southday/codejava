@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.*;
+
 /**
  * Author southday
  * Date   2019/2/11
@@ -33,10 +35,9 @@ public class JUnitUseCase {
     }
 
     public static void main(String[] args) {
-        String s = "String {}|| vms &*( hello";
-        for (String v : s.split("\\W+")) {
-            System.out.println(v);
-        }
-
+        List<String> lst = null;
+        lst = new ArrayList<>();
+        lst.add("1");
+        lst.add("2");
     }
 }

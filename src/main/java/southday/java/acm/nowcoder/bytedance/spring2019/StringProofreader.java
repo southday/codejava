@@ -3,8 +3,8 @@ package southday.java.acm.nowcoder.bytedance.spring2019;
 import java.util.Scanner;
 
 /*
-题目：
-https://www.nowcoder.com/question/next?pid=16516564&qid=362290&tid=30648374
+题目：字节跳动2019春招研发部分编程题汇总 1/7
+https://www.nowcoder.com/test/16516564/summary，1/7
 
 我叫王大锤，是一家出版社的编辑。我负责校对投稿来的英文稿件，这份工作非常烦人，因为每天都要去修正无数的拼写错误。但是，优秀的人总能在平凡的工作中发现真理。我发现一个发现拼写错误的捷径：
 
@@ -39,7 +39,7 @@ woow
  */
 
 /**
- * 字节跳动，2019春招，笔试题
+ * 字节跳动，2019春招，笔试题，https://www.nowcoder.com/test/16516564/summary，1/7
  * @author southday
  * @date 2020/2/19
  */
