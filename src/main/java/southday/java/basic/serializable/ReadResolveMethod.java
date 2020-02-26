@@ -1,5 +1,7 @@
 package southday.java.basic.serializable;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 /* 单例模式，在不参与序列化机制下，该类是可行的（暂不考虑反射）
@@ -9,7 +11,7 @@ final class MySingletonNoReadResolve implements Serializable {
     private static final long serialVersionUID = 2L;
     private MySingletonNoReadResolve() {}
     private static final MySingletonNoReadResolve INSTANCE = new MySingletonNoReadResolve();
-    
+
     public static MySingletonNoReadResolve getInstance() {
         return INSTANCE;
     }
@@ -24,17 +26,24 @@ final class MySingletonWithReadResolve implements Serializable {
     private static final long serialVersionUID = 1L;
     private MySingletonWithReadResolve() {}
     private static final MySingletonWithReadResolve INSTANCE = new MySingletonWithReadResolve();
-    
+
     public static MySingletonWithReadResolve getInstance() {
         return INSTANCE;
     }
-    
+
     /* 1) readResolve的最主要应用场合就是单例、枚举类型的保护性恢复
      * 2) Java5之后的版本都实现了enum类型的自动保护性恢复
      * 3) 如果依赖readResolve进行实例控制，则带有对象引用类型的所有实例域都必须声明为transient，否则可能遭到攻击（Effective Java 2 第77条）
+     * 4) 如果同时实现了 readResolve 和 readObject 方法，则调用顺序是：readObject -> readResolve，即保证最终返回的对象是 readResolve 所返回的；
      */
     private Object readResolve() {
+        System.out.println("readResolve");
         return INSTANCE;
+    }
+
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        System.out.println("readObject");
+        ois.defaultReadObject();
     }
 }
 
@@ -44,12 +53,12 @@ final class MySingletonWithReadResolve implements Serializable {
  * @date 2018年5月15日
  */
 public class ReadResolveMethod {
-    
+
     public static void main(String[] args) {
-        testNoReadResolve(); // false
+//        testNoReadResolve(); // false
         testWithReadResolve(); // true
     }
-    
+
     // 测试1：MySingletonNoReadResolve
     public static void testNoReadResolve() {
         MySingletonNoReadResolve instance = MySingletonNoReadResolve.getInstance();
@@ -57,7 +66,7 @@ public class ReadResolveMethod {
         MySingletonNoReadResolve obj = (MySingletonNoReadResolve) SerializeUtil.deserializeObject("instance.out");
         System.out.println("instance == obj : " + (instance == obj));
     }
-    
+
     // 测试2：MySingletonWithReadResolve
     public static void testWithReadResolve() {
         MySingletonWithReadResolve instance = MySingletonWithReadResolve.getInstance();
