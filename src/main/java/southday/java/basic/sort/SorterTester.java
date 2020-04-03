@@ -57,6 +57,13 @@ public class SorterTester {
     public void testQuickSort() {
         testSortDouble(new QuickSorter());
     }
+    /**
+     * 交换排序—快速排序，非递归实现
+     */
+    @Test
+    public void testNonRecQuickSort() {
+        testSortDouble(new NonRecQuickSorter());
+    }
 
     /**
      * 归并排序

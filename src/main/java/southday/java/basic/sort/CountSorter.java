@@ -1,4 +1,7 @@
 package southday.java.basic.sort;
+
+import java.util.Arrays;
+
 /**
  * CounSort is not often be used, because it just for {@code int[]} array.
  * There are <b> n </b> input integers, which every one is in area {@code [0, k]},
@@ -19,8 +22,7 @@ public class CountSorter extends Sorter {
     public void sort(int[] arr) {
         int maxv = Sorter.findMax(arr);
         int[] cnt = new int[maxv+1]; // [0...mav]
-        for (int i = 0; i <= maxv; i++)
-            cnt[i] = 0;
+        Arrays.fill(cnt, 0);
         for (int i = 0; i < arr.length; i++)
             cnt[arr[i]]++; // 统计
         for (int i = 1; i <= maxv; i++)
